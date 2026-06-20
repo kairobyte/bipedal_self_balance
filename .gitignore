@@ -1,0 +1,37 @@
+# --- Local Sync & Personal ---
+.tmp.drivedownload/
+.tmp.driveupload/
+ignore/
+test/
+0_Test_Model/
+
+# --- ROS 2 Jazzy Specific ---
+build/
+install/
+log/
+.pytest_cache/
+test_results/
+# Colcon sometimes leaves these behind
+COLCON_IGNORE
+
+# --- Python / ROS 2 Python Nodes ---
+__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+
+# --- PlatformIO Specific ---
+.pio/
+.pioenvs/
+.piolibdeps/
+libdeps/
+
+# --- IDEs and OS ---
+.vscode/
+.DS_Store
+*.swp
+
+# --- KiCad --- 
+fp-info-cache
+*-backups/
+.history
