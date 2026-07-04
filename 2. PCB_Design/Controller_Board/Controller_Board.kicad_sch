@@ -4110,16 +4110,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 82.55) (xy 78.74 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aa5b3994-8f23-4686-a818-13a49d5d97ce")
-	)
-	(wire
-		(pts
 			(xy 213.36 63.5) (xy 215.9 63.5)
 		)
 		(stroke
@@ -4217,16 +4207,6 @@
 			(type default)
 		)
 		(uuid "e4b3eae8-02a2-41de-9164-819f19489682")
-	)
-	(wire
-		(pts
-			(xy 78.74 87.63) (xy 78.74 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ef1d393b-a4f1-4d2e-832e-8c96a388ead3")
 	)
 	(wire
 		(pts
@@ -4369,7 +4349,7 @@
 		(uuid "23e29fe3-f63d-441c-b19d-fc785c5cda46")
 	)
 	(label "12V_IN"
-		(at 73.66 82.55 180)
+		(at 78.74 85.09 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4588,7 +4568,7 @@
 		)
 		(uuid "714db0ca-50a7-4118-b621-8bbf993f93bb")
 	)
-	(label "5V_sensor"
+	(label "esp_3V"
 		(at 81.28 111.76 180)
 		(effects
 			(font
@@ -4989,7 +4969,7 @@
 		(uuid "d85cbcd7-eb37-429a-8ae4-3710145f4f44")
 	)
 	(label "GND"
-		(at 78.74 87.63 180)
+		(at 78.74 82.55 180)
 		(effects
 			(font
 				(size 1.27 1.27)
