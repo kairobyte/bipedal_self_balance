@@ -3015,8 +3015,8 @@
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at 0 4.318 0)
+			(property "Reference" "U2"
+				(at 5.715 5.08 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3026,7 +3026,7 @@
 				)
 			)
 			(property "Value" "MPU_6050_devkit"
-				(at -0.254 1.778 0)
+				(at 5.715 2.54 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
@@ -3058,6 +3058,17 @@
 				)
 			)
 			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "3D_Model" ""
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -6332,6 +6343,17 @@
 			)
 		)
 		(property "Description" ""
+			(at 158.75 111.76 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "3D_Model" ""
 			(at 158.75 111.76 0)
 			(hide yes)
 			(show_name no)

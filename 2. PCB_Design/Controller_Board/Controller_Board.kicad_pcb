@@ -3913,6 +3913,17 @@
 			(uuid "bf54940f-41ee-4a3d-83dd-ed3b3cc9021d")
 		)
 		(embedded_fonts no)
+		(model "D:/github/bipedal_self_balance/2. PCB_Design/0_Custom_Components/MPU-9255.STEP"
+			(offset
+				(xyz 8 -12.5 3)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -90)
+			)
+		)
 	)
 	(footprint "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm"
 		(layer "F.Cu")
@@ -14832,6 +14843,17 @@
 			(uuid "8045ceca-487a-45a5-bd08-4d31258f25e7")
 		)
 		(embedded_fonts no)
+		(model "D:/github/bipedal_self_balance/2. PCB_Design/0_Custom_Components/MPU 6050 IMU.STEP"
+			(offset
+				(xyz -8.5 -17 -7.5)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz -90 -0 -90)
+			)
+		)
 	)
 	(footprint "Connector_JST:JST_EH_B4B-EH-A_1x04_P2.50mm_Vertical"
 		(layer "F.Cu")
