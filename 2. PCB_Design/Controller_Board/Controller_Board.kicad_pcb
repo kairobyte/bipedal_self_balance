@@ -3913,15 +3913,15 @@
 			(uuid "bf54940f-41ee-4a3d-83dd-ed3b3cc9021d")
 		)
 		(embedded_fonts no)
-		(model "D:/github/bipedal_self_balance/2. PCB_Design/0_Custom_Components/MPU-9255.STEP"
+		(model "D:/github/bipedal_self_balance/2. PCB_Design/0_Custom_Components/10_Pin_Header_Male.STEP"
 			(offset
-				(xyz 8 -12.5 3)
+				(xyz 1.25 -13 2.5)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz -90 -0 -90)
+				(xyz 90 -0 90)
 			)
 		)
 	)
