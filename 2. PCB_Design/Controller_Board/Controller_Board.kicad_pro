@@ -253,7 +253,7 @@
       "internal_id": "",
       "mfg": "",
       "mpn": "",
-      "sch_revision": ""
+      "sch_revision": "2"
     },
     "layer_pairs": [],
     "layer_presets": [],
@@ -599,7 +599,7 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "../Gerbers/",
+      "plot": "C:/Users/sushant/Downloads/pcb/",
       "specctra_dsn": "",
       "vrml": ""
     },

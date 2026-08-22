@@ -4,6 +4,12 @@
 	(generator_version "10.0")
 	(uuid "5aba3038-4d8b-42ec-a9f3-5ce4ab7bd66f")
 	(paper "A4")
+	(title_block
+		(title "Bipedal Robot Controller Schematic")
+		(date "2026-06-26")
+		(rev "2")
+		(company "Kairobyte")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Socket"
 			(pin_names

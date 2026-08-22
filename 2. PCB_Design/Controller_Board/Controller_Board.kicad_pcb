@@ -119,11 +119,11 @@
 			(sketchdnponfab yes)
 			(crossoutdnponfab yes)
 			(subtractmaskfromsilk no)
-			(outputformat 1)
+			(outputformat 4)
 			(mirror no)
 			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "../Gerbers/")
+			(outputdirectory "C:/Users/sushant/Downloads/pcb/")
 		)
 	)
 	(footprint "kicad_lib:YAAJ_DCDC_StepDown_LM2596"
