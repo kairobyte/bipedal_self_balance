@@ -4,10 +4,15 @@
 #include "servo.h"
 #include "gyro.h"
 
-float filteredAX = 0;
 const float ALPHA = 0.02f; 
-const float DEADBAND = 0.75f;
+const float DEADBAND = 2.0f;
 const float GAIN = 75.0f;      
+
+const float SET_POINT = 8.0f;
+
+const float kp = 0.0f;
+const float ki = 0.0f;
+const float kd = 0.0f;
 
 
 void setup() {
@@ -23,13 +28,13 @@ void setup() {
 }
 
 void loop() {
-	float raw = get_AX();
-	filteredAX = ALPHA * raw + (1 - ALPHA) * filteredAX;
+	float angle = get_angle();
+	float error = angle - SET_POINT;
+	// filteredAX = ALPHA * raw + (1 - ALPHA) * filteredAX;
 	float command = 0;
-	if (fabs(filteredAX) > DEADBAND) {
-		command = GAIN * filteredAX;
+	if (fabs(error) > DEADBAND) {
+		command = GAIN * error;
 	}
 
 	runStepper((long)command);
-	Serial.println(filteredAX, 5);
 }

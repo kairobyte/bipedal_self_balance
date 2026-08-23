@@ -6,14 +6,14 @@
 #define dir_pin_r 32
 #define step_pin_r 33
 
-int init_speed = 500;
+int init_speed = 1000;
 
 AccelStepper stepper_left(AccelStepper::DRIVER, step_pin_l, dir_pin_l);
 AccelStepper stepper_right(AccelStepper::DRIVER, step_pin_r, dir_pin_r);
 
 void stepper_setup() {
-	stepper_left.setMaxSpeed(2000);
-	stepper_right.setMaxSpeed(2000);
+	stepper_left.setMaxSpeed(1600);
+	stepper_right.setMaxSpeed(1600);
 	stepper_left.setSpeed(init_speed);
 	stepper_right.setSpeed(init_speed);
 }
