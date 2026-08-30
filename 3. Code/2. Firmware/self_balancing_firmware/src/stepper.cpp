@@ -12,8 +12,8 @@ AccelStepper stepper_left(AccelStepper::DRIVER, step_pin_l, dir_pin_l);
 AccelStepper stepper_right(AccelStepper::DRIVER, step_pin_r, dir_pin_r);
 
 void stepper_setup() {
-	stepper_left.setMaxSpeed(1600);
-	stepper_right.setMaxSpeed(1600);
+	stepper_left.setMaxSpeed(3000);
+	stepper_right.setMaxSpeed(3000);
 	stepper_left.setSpeed(init_speed);
 	stepper_right.setSpeed(init_speed);
 }
@@ -21,6 +21,16 @@ void stepper_setup() {
 void runStepper(int speed){
 	stepper_left.setSpeed(-speed);
 	stepper_right.setSpeed(speed);
+	stepper_left.runSpeed();
+	stepper_right.runSpeed();
+} 
+
+void setStepperSpeed(int speed){
+	stepper_left.setSpeed(-speed);
+	stepper_right.setSpeed(speed);
+}
+
+void stepStepper(){
 	stepper_left.runSpeed();
 	stepper_right.runSpeed();
 } 

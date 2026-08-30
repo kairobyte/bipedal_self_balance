@@ -15,6 +15,7 @@ void servo_setup(){
 	right_up.attach(right_up_pin, 544, 2400);
 	right_low.attach(right_low_pin, 544, 2400);
 	left_low.attach(left_low_pin, 544, 2400);
+	// left_low.attach(left_low_pin, 544, 2400);
 }
 
 void servo_move(int a, int b, int c, int d){

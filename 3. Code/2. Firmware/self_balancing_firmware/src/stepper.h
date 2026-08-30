@@ -8,3 +8,5 @@ extern int init_speed;
 
 void stepper_setup();
 void runStepper(int speed);
+void setStepperSpeed(int speed);
+void stepStepper(void);

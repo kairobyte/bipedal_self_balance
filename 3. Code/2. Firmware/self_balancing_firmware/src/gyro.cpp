@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "gyro.h"
+#include "tuning.h"
 
 const int MPU_ADDR_1 = 0x69; //6050
 const int MPU_ADDR_2 = 0x68; //9265
@@ -35,8 +36,6 @@ const int16_t CF_GX2 = 1172;
 
 unsigned long lastTime = 0;
 float angle = 0;
-float alpha = 0.40;
-float beta = 0.98;
 
 // @CodeScene(disable:"Excess Number of Function Arguments")
 float floatMap(float x, float in_min, float in_max, float out_min, float out_max) {
@@ -61,7 +60,7 @@ void calcCorrectionFactor(int16_t val1, int16_t val2) {
 
 void displayResult(float val1, float val2, float val3) {
 	
-	// Serial.printf("MPU1: %.5d MPU2: %.5d \n", X_out1, X_out2);
+	Serial.printf("MPU1: %.5d MPU2: %.5d \n", X_out1, X_out2);
 	Serial.print("Min:");
 	Serial.print(-90);
 	Serial.print(",");
@@ -146,8 +145,8 @@ float get_angle() {
 	float accel_raw = get_val(ACCEL_XOUT_H1, CF_AX1, CF_AX2);
 	float gyro_raw = get_val(GYRO_XOUT_H1, CF_GX1, CF_GX2);
 
-	accel = accel * (1-alpha) + accel_raw * alpha;
-	gyro = gyro * (1-alpha) + gyro_raw * alpha;
+	accel = accel * (1-acelk) + accel_raw * acelk;
+	gyro = gyro * (1-gyrok) + gyro_raw * gyrok;
 
 	angle = beta * (angle + gyro*dt) + (1-beta) * accel;
     // displayResult(accel, gyro, angle);
