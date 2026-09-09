@@ -8,9 +8,11 @@ This is a self-balancing robot built from scratch, 3D modeled, PCB designed, 3D 
 
 Right now, it balances for a few seconds at a time. It is not perfect, and there are known issues (see [Problems](#problems) below), but the full design, hardware, and firmware are open source here for anyone who wants to build on it, learn from it, or point out what I got wrong.
 
-<video src="4. Assets/balance.mp4" width="80%" controls></video>
+**Follow the Journey:** [@kairobyte](https://instagram.com/kairobyte) on Instagram.
 
----
+<img src="4. Assets/balance.gif" alt="Balancing Video" height="300">
+
+
 
 ## Sponsors
 
@@ -25,7 +27,7 @@ This build was supported by:
 [<img width="200" alt="Print3D Logo" src="4. Assets/Print3D.png">](https://print3dnepal.com/)
 
 
----
+
 
 ## Table of Contents
 
@@ -44,7 +46,7 @@ This build was supported by:
 - [Repository Structure](#repository-structure)
 - [License](#license)
 
----
+
 
 ## How It Started
 
@@ -55,7 +57,7 @@ This build was supported by:
 <!-- PLACEHOLDER: Sketch photo and early draft 3D model screenshot -->
 <img src="4. Assets/sketch.jpg" alt="Rough Sketch" height="300"><img src="4. Assets/draft-model.png" alt="Draft 3D Model" height="300">
 
----
+
 
 ## Components
 
@@ -66,28 +68,28 @@ This build was supported by:
 
 > **Note:** If you're building something similar, I would not recommend steppers for the wheels. Go with high-torque BLDC motors instead. Steppers work, but they're not the ideal choice here.
 
----
+
 
 ## Electronics
 
 - Two buck converters step down 12V from a 3S LiPo battery, one dedicated to sensors, one dedicated to servos, to keep noisy current draw away from sensor power.
 - A capacitor and diode protect the ESP32 from brownouts during high current draw from the servos and steppers.
 
----
+
 
 ## PCB
 
 - Selected footprints and components, then built out the full schematic with labeled nets for readability.
 - Completed layout and routing.
-- Ran the Design Rule Checker (DRC), exported Gerber files, and had the board manufactured through NextPCB.
+- Ran the Design Rule Checker (DRC), exported Gerber files, and had the board manufactured through [NextPCB](https://www.nextpcb.com/?code=kairobyte).
 
 <!-- PLACEHOLDER: Schematic screenshot, PCB layout, and final manufactured board photo -->
 <img src="4. Assets/schematic.png" alt="Schematic" width="300">
 <img src="4. Assets/pcb-layout-front.png" alt="PCB Layout Front" width="300">
 <img src="4. Assets/pcb-layout-back.png" alt="PCB Layout Back" width="300">
-<img src="4. Assets/pcb-final.png" alt="Final PCB" width="300">
+<img src="4. Assets/pcb-final.jpg" alt="Final PCB" width="300">
 
----
+
 
 ## 3D Modelling
 
@@ -97,14 +99,16 @@ This build was supported by:
 
 <img src="4. Assets/3dmodel.png" alt="3D Model" width="300">
 
----
+
 
 ## 3D Printing
 
 - Parts were prepared and arranged in the slicer, then printed over several days.
 - Most parts fit together correctly on the first attempt.
+- Thanks [Axis Tech](https://print3dnepal.com/) for the Filament Support! 
 
----
+<img src="4. Assets/3d-printing.png" alt="3D Printing Process" width="300">
+
 
 ## Assembly
 
@@ -115,7 +119,7 @@ This build was supported by:
 
 <img src="4. Assets/assembly.jpg" alt="Fully Assembled Build" width="300">
 
----
+
 
 ## Firmware
 
@@ -123,7 +127,7 @@ This build was supported by:
 - Built a basic PID controller as the first control approach.
 - Due to the robot's irregular shape, finding the correct center of mass, and therefore the correct PID set point, was one of the most time-consuming parts of the build.
 
----
+
 
 ## PID Tuning
 
@@ -136,7 +140,7 @@ Tuning was the hardest part of this project by a significant margin.
 - Found that linear gain increments were not effective, and switched to exponentially increasing gains, along with a low-pass filter applied to key parameters. This slowed the robot's reaction time somewhat, but the control loop still ran at approximately 1kHz, which was fast enough to remain effective.
 - Total PID tuning time was a little over a week, including a short break after becoming frustrated with a lack of progress.
 
----
+
 
 ## Problems
 
@@ -146,14 +150,14 @@ Tuning was the hardest part of this project by a significant margin.
 - **Electronics/compute headroom**: the ESP32 currently handles the full control loop, but adding Bluetooth communication (for planned PS4 controller support) is expected to consume enough clock cycles to slow down the PID loop. A better long-term architecture would use a dedicated microcontroller (e.g. STM32) for the core PID loop, with the ESP32 handling WiFi/Bluetooth communication separately, connected via UART.
 - **Noise/sensing**: relying on a single sensing source is fragile. A low-pass filter helps smooth spikes, and vibration-dampening rubber mounts can reduce mechanical noise from the steppers.
 
----
+
 
 ## Result
 
 The robot currently balances for a few seconds before losing stability. It is a working proof of concept, not a finished product, further tuning and hardware changes are planned for the next phase of this build.
 
 
----
+
 
 ## Future Plans
 
@@ -162,7 +166,7 @@ The robot currently balances for a few seconds before losing stability. It is a 
 
 Follow along on Instagram for more frequent build updates.
 
----
+
 
 ## Repository Structure
 
@@ -176,8 +180,13 @@ Follow along on Instagram for more frequent build updates.
 └── README.md
 ```
 
----
+
 
 ## License
 
 This project is open source under the MIT license license. See `LICENSE` for details.
+
+##
+
+Send a mail if you want to discuss robotics, design, engineering projects, or anything you think I should build next.
+[mail@sushant.uk](mailto:mail@sushant.uk)
