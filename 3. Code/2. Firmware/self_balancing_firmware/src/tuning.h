@@ -2,6 +2,7 @@
 #pragma once
 #include <Arduino.h>
 
+extern volatile float ke, kc;
 extern volatile float kp, ki, kd, kp_boost;
 extern volatile float SET_POINT, DEADBAND, acelk, gyrok, beta;
 extern volatile float MAX_COMMAND, MIN_SPEED;

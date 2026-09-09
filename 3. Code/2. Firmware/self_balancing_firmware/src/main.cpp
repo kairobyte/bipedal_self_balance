@@ -12,6 +12,8 @@ float command = 0;
 float integral = 0;
 float lastAngle = SET_POINT;
 float servoChange = 0.0;
+float lastError = 0.0;
+float lastCommand =0.0;
 
 unsigned long lastControlTime = 0;
 unsigned long last_time = 0;
@@ -42,6 +44,8 @@ void loop() {
 
 		float angle = get_angle();
 		float error = angle - SET_POINT;
+		error = ke * error + (1-ke)*lastError;
+		lastError = error;
 		if (fabs(error) < DEADBAND) error = 0;
 
 		integral += error * dt;
@@ -52,13 +56,16 @@ void loop() {
 
 		float sign = (error > 0) ? 1.0f : (error < 0 ? -1.0f : 0.0f);
 		float pTerm = kp * error + kp_boost * error * error * sign;
-		command = pTerm + ki * integral - kd * derivative; // note: + kd now
+		
+		command = pTerm + ki * integral - kd * derivative; 
 
 		if (error != 0 && fabs(command) > 0 && fabs(command) < MIN_SPEED) {
 			command = (command > 0) ? MIN_SPEED : -MIN_SPEED;
 		} else if (error == 0) {
 			command = 0;
 		}
+		command = command*kc + (1-kc)*lastCommand;
+		lastCommand = command;
 		command = constrain(command, -MAX_COMMAND, MAX_COMMAND);
 		setStepperSpeed((int)command);
 

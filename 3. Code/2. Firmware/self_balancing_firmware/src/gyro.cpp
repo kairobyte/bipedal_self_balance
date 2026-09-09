@@ -111,25 +111,26 @@ float get_val(int LOC_H, int16_t CF1, int16_t CF2) {
 		raw1 = (int16_t)((x_h << 8) | x_l) + CF1;
 	}
 
-	Wire.beginTransmission(MPU_ADDR_2);
-	Wire.write(LOC_H);
-	Wire.endTransmission(false);
+	// Wire.beginTransmission(MPU_ADDR_2);
+	// Wire.write(LOC_H);
+	// Wire.endTransmission(false);
 
-	Wire.requestFrom(MPU_ADDR_2, 2);
-	if (Wire.available() >= 2) {
-		uint8_t x_h = Wire.read();
-		uint8_t x_l = Wire.read();
-		// out2 = (int16_t)((x_h << 8) | x_l) + KF_AX2;
-		raw2 = (int16_t)((x_h << 8) | x_l) + CF2;
+	// Wire.requestFrom(MPU_ADDR_2, 2);
+	// if (Wire.available() >= 2) {
+	// 	uint8_t x_h = Wire.read();
+	// 	uint8_t x_l = Wire.read();
+	// 	// out2 = (int16_t)((x_h << 8) | x_l) + KF_AX2;
+	// 	raw2 = (int16_t)((x_h << 8) | x_l) + CF2;
 
-	}
+	// }
 	
 	float out1 = floatMap((float)raw1, -16384, 16384, 90, -90);
-	float out2 = floatMap((float)raw2, -16384, 16384, 90, -90);
+	// float out2 = floatMap((float)raw2, -16384, 16384, 90, -90);
 	
 	// calcCorrectionFactor(raw1, raw2);
 
-	return (out1+out2) / 2.0f;
+	// return (out1+out2) / 2.0f;
+	return (out1);
 }
 
 float get_angle() {
