@@ -184,7 +184,7 @@ Follow along on Instagram for more frequent build updates.
 
 ## License
 
-This project is open source under the MIT license license. See `LICENSE` for details.
+This project is open source under the MIT license. See `LICENSE` for details.
 
 ##
 
